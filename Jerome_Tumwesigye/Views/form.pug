@@ -1,0 +1,90 @@
+DOCTYPE
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Student Details
+    link(rel='stylesheet', href='/css/form.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+  
+  
+  body(onload='surname.focus()')
+    //- Enclose all data in a single container
+    .container
+      div
+        nav
+          h2 Student's Details Entry Form
+        div
+          p(style='color: #542a52 !important;')  Not all fields marked with a red red star (*) are required
+        div
+          //- Create form on path /register
+          form(method='POST' action='/register')
+            .form-row
+              .col-md-6
+                label(for='surname') Sur name *
+                input.form-control(type='text', placeholder='Enter your Sur Name here', required='', name='surName' id="surname")
+              .col-md-6
+                label(for='givenname') Given name *
+                input.form-control(type='text', placeholder='Enter your Given Name here', required='', name='givenName' id="givenName")
+            .form-row
+              .col-12
+                label(for='gender') Gender *
+                br
+                div(style='border: 2px solid #d9d9d9; width: 100%; height: 40px;')
+                  .form-check.form-check-inline
+                    input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1', required='')
+                    label.form-check-label(for='inlineRadio1') Male
+                  .form-check.form-check-inline
+                    input#inlineRadio2.form-check-input(type='radio', name='inlineRadioOptions', value='option2', required='')
+                    label.form-check-label(for='inlineRadio2') female
+            .form-row
+              .col-md-6
+                label(for='date') Date of Birth *
+                input.form-control(type='date', placeholder='01/01/1970', required='', name='dob')
+              .col-md-6
+                .form-group
+                  //- Create a dropdown menu
+                  label(for='exampleFormControlSelect1') Country
+                  select#exampleFormControlSelect1.form-control
+                    option -----Select Country-----
+                    option Uganda
+                    option Kenya
+                    option Tanzania
+                    option Rwanda
+            .form-row
+              .col-md-6
+                label(for='residence') Place of Residence *
+                input.form-control(type='text', placeholder='Enter your Current place of residence', required='', name='residence')
+              .col-md-6
+                label(for='phoneNumber') Phone Number *
+                input.form-control(type='text', placeholder='E.g 07******** or +2567********', required='', name='phone')
+            .form-row
+              .col-12
+                label(for='email') Email address *
+                input.form-control(type='text', placeholder='E.g applicant@gmail.com', required='', name='email')
+            .form-group
+              .form-row
+                .col-md-6
+                  label.control-label.col-sm-15(for='skills')
+                    | Skills (Separate skills with
+                    | commas)*
+                  .col-sm-15
+                    textarea.form-control(rows='3', id='')
+                .col-md-6
+                  label.control-label.col-sm-15(for='projects')
+                    | Projects (Separate skills with
+                    | commas)*
+                  .col-sm-15
+                    textarea.form-control(rows='3', id='')
+            .form-group
+              .form-row
+                .col-md-6
+                .col-md-6
+                  .form-row
+                    .col-md-6
+                      //- Submit form upon validation
+                      input#btnPri.btn.btnform(onclick="validate.js" type='Submit', value='Submit')
+                    .col-md-6
+                      //- Reset form
+                      input#btnSec.btn.btnform(type='Reset', value='Cancel')

@@ -1,0 +1,41 @@
+
+doctype html
+html
+    head 
+        title Registered
+        //- Bootstrap link
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    body
+        //- Create a table-format to accept the data
+        div.container
+            h1 Registered Students
+
+    div.row.justify-content-center
+        div.col-md-6 
+            div.card-body 
+                header.card-header 
+                    h4.card-title Student Details
+                   
+                    |&nbsp
+                    
+                table.table
+                    thead.thead-dark 
+                        tr
+                            th Sur Name
+                            th Given Name
+                            th DOB
+                            th Residence
+                            th PhoneNumber
+                            th Email
+
+                            
+                    tbody
+                        each studentDetails in studentDetails
+                            tr 
+                                td #{studentDetails.surname}
+                                td #{studentDetails.givenName}
+                                td #{studentDetails.dob}
+                                td #{studentDetails.residence}
+                                td #{studentDetails.phone}
+                                td #{studentDetails.email}
+                             
